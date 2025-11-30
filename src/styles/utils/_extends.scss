@@ -1,4 +1,72 @@
 %h1 {
-  font-family: Roboto, sans-serif;
+  font-weight: 600;
+  font-size: var(--h1-size);
+  line-height: 120%;
+  letter-spacing: -2px;
+  color: $font-color-primary;
+
+  @include on-tablet {
+    --h1-size: 64px;
+
+    line-height: 68px;
+  }
+}
+
+%h2 {
+  font-weight: 600;
+  font-size: var(--h2-size);
+  line-height: 120%;
+  color: $font-color-title;
+
+  @include on-tablet {
+    --h2-size: 52px;
+
+    line-height: 150%;
+  }
+}
+
+%h3 {
+  font-weight: 600;
+  font-size: var(--h3-size);
+  line-height: 150%;
+  color: $font-color-title;
+}
+
+%h4 {
+  font-weight: 600;
+  font-size: var(--h4-size);
+  line-height: 140%;
+  color: $font-color-title;
+}
+
+%font-text {
+  font-family: OpenSans, sans-serif;
   font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: $font-color-secondary;
+}
+
+%card-font-text {
+  font-family: OpenSans, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 150%;
+  color: $font-color-secondary;
+}
+
+%header-font-text {
+  font-family: OpenSans, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: $font-color-primary;
+}
+
+%section-nav-title {
+  font-weight: 700;
+  font-size: var(--nav-font-size);
+  line-height: 100%;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }

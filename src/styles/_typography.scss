@@ -1,3 +1,35 @@
+html {
+  font-family: Poppins, sans-serif;
+}
+
 h1 {
   @extend %h1;
+}
+
+h2 {
+  @extend %h2;
+}
+
+h3 {
+  @extend %h3;
+}
+
+h4 {
+  @extend %h4;
+}
+
+.font-text {
+  @extend %font-text;
+}
+
+.card-font-text {
+  @extend %card-font-text;
+}
+
+.header-font-text {
+  @extend %header-font-text;
+}
+
+.section-title {
+  @extend %section-nav-title;
 }

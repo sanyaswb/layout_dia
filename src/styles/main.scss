@@ -1,7 +1,9 @@
 @import 'utils';
+@import 'theme';
 @import 'fonts';
 @import 'typography';
+@import 'blocks';
 
 body {
-  background: $c-gray;
+  background: $bg-page;
 }

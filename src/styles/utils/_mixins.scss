@@ -4,3 +4,81 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-large {
+  @media (min-width: $large-min-width) {
+    @content;
+  }
+}
+
+@mixin on-design {
+  @media (min-width: $design-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop-s {
+  @media (min-width: $desktop-s-min-width) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin svg-icon-theme($name, $color, $hover) {
+  &.svg-icon-#{$name} {
+    fill: $color;
+
+    &:hover,
+    &:focus {
+      fill: $hover;
+    }
+  }
+}
+
+@mixin page-grid {
+  --grid-columns: 2;
+
+  display: grid;
+  column-gap: $min-column-gap;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+
+  @include on-tablet {
+    --grid-columns: 6;
+
+    column-gap: $max-column-gap;
+  }
+
+  @include on-desktop-s {
+    --grid-columns: 12;
+
+    column-gap: $min-column-gap;
+  }
+}
+
+@mixin page-inline-padding {
+  @include on-tablet {
+    :root {
+      --inline-padding: 41px;
+    }
+  }
+}
+
+@mixin main-block-padding {
+  padding-top: 120px;
+  padding-bottom: 80px;
+
+  @include on-tablet {
+    padding-top: 148px;
+  }
+}

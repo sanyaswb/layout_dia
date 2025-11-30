@@ -11,5 +11,8 @@ node_modules
 # Generated files
 backstop_data
 dist
+convert-fonts.js
+import-fonts.js
 .cache
 .parcel-cache
+
