@@ -1,0 +1,20 @@
+.description {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: center;
+
+  @include on-tablet {
+    gap: 16px;
+  }
+
+  @include on-desktop-s {
+    max-width: 754px;
+    place-self: center;
+  }
+
+  & > p {
+    @extend %font-description;
+  }
+}

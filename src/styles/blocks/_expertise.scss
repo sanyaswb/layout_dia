@@ -1,0 +1,77 @@
+.expertise {
+  background-color: $white;
+  border-radius: var(--border-radius);
+
+  @include adaptive-padding(
+    72px 20px 72px 20px,
+    $tablet: 128px 41px 128px 41px,
+    $desktop-s: 128px 41px 134px 41px
+  );
+
+  &__wrapper {
+    row-gap: 56px;
+    text-align: center;
+
+    @include on-tablet {
+      row-gap: 64px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include on-tablet {
+      grid-column: 2 / -2;
+      gap: 72px;
+    }
+
+    @include on-desktop-s {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      column-gap: 137px;
+    }
+  }
+
+  &__image {
+    height: 166px;
+    aspect-ratio: 1 / 1;
+    border-radius: $bg-image-radius;
+    place-self: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    margin-bottom: 32px;
+
+    @include on-desktop-s {
+      margin-bottom: 40px;
+    }
+
+    &--1 {
+      background-image: url(../images/what-we-do/what-we-do-1.jpg);
+    }
+
+    &--2 {
+      background-image: url(../images/what-we-do/what-we-do-2.jpg);
+    }
+
+    &--3 {
+      background-image: url(../images/what-we-do/what-we-do-3.jpg);
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 16px;
+  }
+  &__description {
+    @extend %font-secondary-text;
+  }
+}
