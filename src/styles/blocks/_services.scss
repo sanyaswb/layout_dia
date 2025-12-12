@@ -1,5 +1,102 @@
 .services {
+  grid-column: 1 / -1;
+
+  @include adaptive-padding(
+    120px 20px 120px 20px,
+    $tablet: 148px 41px 148px 41px,
+    $desktop-s: 251px 54px 151px 54px,
+    $design: 251px 54px 148px 54px
+  );
+
+  &__top {
+    grid-column: 1 / -1;
+    margin-bottom: 48px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+
+      margin-bottom: 56px;
+    }
+
+    @include on-desktop-s {
+      grid-column: 1 / 5;
+      grid-row: 1;
+      margin-bottom: 0;
+    }
+  }
+
+  &__cards {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    margin-top: 29px;
+
+    @include on-tablet {
+      display: grid;
+      grid-auto-flow: column;
+
+      & > :nth-child(1) {
+        grid-column: 1 / 4;
+      }
+
+      & > :nth-child(2) {
+        grid-column: 4 / -1;
+        grid-row: 1;
+        transform: translateY(-50%);
+      }
+
+      & > :nth-child(3) {
+        grid-column: 1 / 4;
+      }
+
+      & > :nth-child(4) {
+        grid-column: 4 / -1;
+        grid-row: 2;
+        transform: translateY(-50%);
+      }
+    }
+
+    @include on-desktop-s {
+      grid-row: 1;
+
+      & > :nth-child(1) {
+        grid-column: 7 / 10;
+      }
+
+      & > :nth-child(2) {
+        grid-column: 10 / -1;
+        grid-row: 1;
+        transform: translateY(-50%);
+      }
+
+      & > :nth-child(3) {
+        grid-column: 7 / 10;
+      }
+
+      & > :nth-child(4) {
+        grid-column: 10 / -1;
+        grid-row: 2;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+  }
+
   &__section-title {
     @extend %font-section-title;
+
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__description {
+    @extend %font-secondary-text;
   }
 }

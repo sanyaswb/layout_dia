@@ -67,3 +67,103 @@
 .grid {
   @include page-grid;
 }
+
+.card-services {
+  border-radius: 30px;
+  background-color: $white;
+  padding: 32px;
+  box-shadow: 0 9px 18px 0 rgba(37, 41, 49, 0.03);
+
+  &__number {
+    display: flex;
+    justify-content: center;
+    border-radius: 23px;
+    width: 46px;
+
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    @extend %font-card-text;
+
+    margin-bottom: 32px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+
+    @extend %font-button;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $blue-secondary;
+    border-radius: $circle;
+    height: 40px;
+    aspect-ratio: 1 / 1;
+    margin-right: 16px;
+
+    &-image {
+      height: 16px;
+      width: 16px;
+
+      @include background-config(
+        $image: url(../images/icons/st-right.svg),
+        $size: contain
+      );
+    }
+  }
+}
+
+.card-services__bg-color--1 {
+  background-color: var(--bg-card-1);
+}
+
+.card-services__bg-color--2 {
+  background-color: var(--bg-card-2);
+}
+
+.card-services__bg-color--3 {
+  background-color: var(--bg-card-3);
+}
+
+.card-services__bg-color--4 {
+  background-color: var(--bg-card-4);
+}
+
+.card-services__button-color--1 {
+  background-color: var(--color-card-1);
+}
+
+.card-services__button-color--2 {
+  background-color: var(--color-card-2);
+}
+
+.card-services__button-color--3 {
+  background-color: var(--color-card-3);
+}
+
+.card-services__button-color--4 {
+  background-color: var(--color-card-4);
+}
+
+.card-services__color--1 {
+  color: var(--color-card-1);
+}
+
+.card-services__color--2 {
+  color: var(--color-card-2);
+}
+
+.card-services__color--3 {
+  color: var(--color-card-3);
+}
+
+.card-services__color--4 {
+  color: var(--color-card-4);
+}

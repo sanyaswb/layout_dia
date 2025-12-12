@@ -58,7 +58,6 @@
   font-size: 14px;
   line-height: 150%;
   color: $font-color-secondary;
-  text-align: center;
 }
 
 %font-card-text {
@@ -81,6 +80,7 @@
   font-family: Poppins, sans-serif;
   font-weight: 700;
   font-size: var(--nav-font-size);
+  color: $font-color-section-title;
   line-height: 100%;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -101,4 +101,5 @@
   font-size: 15px;
   line-height: 100%;
   letter-spacing: 0;
+  color: $font-card-link;
 }

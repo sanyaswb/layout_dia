@@ -2,15 +2,16 @@
   background-color: $white;
   border-radius: var(--border-radius);
 
-  @include adaptive-padding(
-    72px 20px 72px 20px,
-    $tablet: 128px 41px 128px 41px,
-    $desktop-s: 128px 41px 134px 41px
-  );
-
   &__wrapper {
     row-gap: 56px;
     text-align: center;
+
+    @include adaptive-padding(
+      72px 20px 72px 20px,
+      $tablet: 128px 41px 128px 41px,
+      $desktop-s: 128px 54px 134px 54px,
+      $design: 128px 54px 134px 54px
+    );
 
     @include on-tablet {
       row-gap: 64px;
