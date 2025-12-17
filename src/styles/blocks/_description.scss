@@ -1,20 +1,36 @@
 .description {
-  grid-column: 1 / -1;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
   text-align: center;
+  width: 100%;
 
-  @include on-tablet {
-    gap: 16px;
+  @include adaptive-padding(
+    120px 20px 120px 20px,
+    $tablet: 148px 41px 148px 41px,
+    $desktop-s: 148px 54px 148px 54px
+  );
+
+  &__title {
+    grid-column: 1 / -1;
+
+    margin-bottom: 24px;
+
+    @include on-tablet {
+      margin-bottom: 16px;
+    }
   }
 
-  @include on-desktop-s {
-    max-width: 754px;
-    place-self: center;
-  }
+  &__text {
+    grid-column: 1 / -1;
 
-  & > p {
+    @include on-desktop-s {
+      place-self: center;
+      max-width: 716px;
+    }
+
+    @include on-design {
+      max-width: 100%;
+      grid-column: 3 / -3;
+    }
+
     @extend %font-description;
   }
 }

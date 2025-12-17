@@ -75,10 +75,15 @@
   }
 
   &__logo-link {
+    height: 100%;
     margin-bottom: 48px;
 
     @include on-tablet {
       margin-bottom: 24px;
+    }
+
+    @include on-desktop-s {
+      margin-bottom: 0;
     }
   }
 }

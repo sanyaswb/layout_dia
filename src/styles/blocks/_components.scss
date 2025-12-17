@@ -1,13 +1,16 @@
 .logo {
-  display: flex;
   height: 28px;
+  fill: $white;
+
+  @include on-desktop-s {
+    @include svg-icon-theme(logo, $white, var(--bg-button-page), $my-duration);
+  }
 }
 
 .menu-btn {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 8px;
   width: 100%;
   gap: 4px;
 
@@ -31,6 +34,10 @@
   @include on-tablet {
     width: 264px;
   }
+
+  @include on-desktop-s {
+    @include hover(background-color, var(--bg-button-form));
+  }
 }
 
 .slider-button {
@@ -42,6 +49,10 @@
   background-color: $white;
   border-radius: $circle;
 
+  @include on-desktop-s {
+    @include hover(background-color, $blue-hover);
+  }
+
   &::after,
   &::before {
     content: '';
@@ -50,6 +61,14 @@
     height: 2px;
     width: 7px;
     background-color: $grey;
+    transition: background-color, $my-duration;
+  }
+
+  @include on-desktop-s {
+    &:hover::after,
+    &:hover::before {
+      background-color: var(--bg-button-page);
+    }
   }
 
   &::after {
@@ -82,6 +101,21 @@
     padding: 32px;
     box-shadow: 0 9px 18px 0 rgba(37, 41, 49, 0.03);
 
+    @include on-desktop-s {
+      &--1 {
+        @include hover(box-shadow, var(--card-shadow-1));
+      }
+      &--2 {
+        @include hover(box-shadow, var(--card-shadow-2));
+      }
+      &--3 {
+        @include hover(box-shadow, var(--card-shadow-3));
+      }
+      &--4 {
+        @include hover(box-shadow, var(--card-shadow-4));
+      }
+    }
+
     &__number {
       display: flex;
       justify-content: center;
@@ -103,8 +137,36 @@
       height: 40px;
       width: 100%;
       color: $font-card-link;
+      transition: color $my-duration;
 
       @extend %font-button;
+
+      @include on-desktop-s {
+        &:hover {
+          .card-services__button {
+            transform: rotate(-90deg);
+          }
+        }
+
+        &--1:hover {
+          color: var(--color-card-1);
+          .card {
+            box-shadow: var(--card-shadow-1);
+          }
+        }
+
+        &--2:hover {
+          color: var(--color-card-2);
+        }
+
+        &--3:hover {
+          color: var(--color-card-3);
+        }
+
+        &--4:hover {
+          color: var(--color-card-4);
+        }
+      }
     }
 
     &__button {
@@ -116,6 +178,7 @@
       height: 40px;
       aspect-ratio: 1 / 1;
       margin-right: 16px;
+      transition: transform $my-duration;
 
       &-image {
         height: 16px;
@@ -216,6 +279,7 @@
         height: 108.98px;
         width: 43.9px;
         border-radius: 12px;
+        transition: transform $my-duration;
 
         @include on-tablet {
           height: 139px;
@@ -263,27 +327,6 @@
       @include on-tablet {
         width: 140px;
         height: 140px;
-      }
-
-      &--1 {
-        @include background-config(
-          url(../images/testimonials/testimonial-ava-1.jpg),
-          $position: top
-        );
-      }
-
-      &--2 {
-        @include background-config(
-          url(../images/testimonials/testimonial-ava-2.jpg),
-          $position: top
-        );
-      }
-
-      &--3 {
-        @include background-config(
-          url(../images/testimonials/testimonial-ava-3.jpg),
-          $position: top
-        );
       }
     }
 
@@ -423,11 +466,5 @@
   &__input {
     position: absolute;
     width: 100%;
-  }
-
-  &__button {
-    & > button {
-      background-color: var(--bg-button-form);
-    }
   }
 }

@@ -68,11 +68,6 @@
     }
   }
 
-  &__logo-img {
-    height: 28px;
-    width: 46px;
-  }
-
   &__hire-us {
     display: flex;
     align-items: center;
@@ -142,6 +137,7 @@
   }
 
   &__menu-btn {
+    padding-block: 10px;
     @include on-desktop-s {
       display: none;
     }

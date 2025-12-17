@@ -37,7 +37,89 @@
     grid-column: 1 / -1;
 
     @include on-desktop-s {
+      &--1 {
+        &:hover {
+          .card-testimonials__back-image--1 {
+            &::before {
+              transform: translateY(-20%) translateX(-90%) rotate(30deg);
+            }
+
+            &::after {
+              transform: translateY(20%) translateX(90%) rotate(30deg);
+            }
+          }
+        }
+      }
+
+      &--2 {
+        &:hover {
+          .card-testimonials__back-image--2 {
+            &::before {
+              transform: translateY(-20%) translateX(-90%) rotate(30deg);
+            }
+
+            &::after {
+              transform: translateY(20%) translateX(90%) rotate(30deg);
+            }
+          }
+        }
+      }
+
+      &--3 {
+        &:hover {
+          .card-testimonials__back-image--3 {
+            &::before {
+              transform: translateY(-20%) translateX(-90%) rotate(30deg);
+            }
+
+            &::after {
+              transform: translateY(20%) translateX(90%) rotate(30deg);
+            }
+          }
+        }
+      }
+    }
+
+    &-image {
+      &--1 {
+        @include background-config(
+          url(../images/testimonials/testimonial-ava-1.jpg),
+          $position: top
+        );
+      }
+
+      &--2 {
+        @include background-config(
+          url(../images/testimonials/testimonial-ava-2.jpg),
+          $position: top
+        );
+      }
+
+      &--3 {
+        @include background-config(
+          url(../images/testimonials/testimonial-ava-3.jpg),
+          $position: top
+        );
+      }
+    }
+
+    @include on-desktop-s {
       grid-column: span 4;
+
+      &--1 {
+        @include hover(box-shadow, var(--card-shadow-1));
+        @include hover(transform, translateY(-10px));
+      }
+
+      &--2 {
+        @include hover(box-shadow, var(--card-shadow-2));
+        @include hover(transform, translateY(-10px));
+      }
+
+      &--3 {
+        @include hover(box-shadow, var(--card-shadow-3));
+        @include hover(transform, translateY(-10px));
+      }
     }
   }
 }

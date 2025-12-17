@@ -1,5 +1,5 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $my-duration;
   &:hover {
     #{$_property}: $_toValue;
   }
@@ -29,13 +29,18 @@
   }
 }
 
-@mixin svg-icon-theme($name, $color, $hover) {
+@mixin svg-icon-theme($name, $color, $hover, $duration: $my-duration) {
   &.svg-icon-#{$name} {
-    fill: $color;
+    color: $color;
+    transition: color $duration ease;
 
     &:hover,
     &:focus {
-      fill: $hover;
+      color: $hover;
+    }
+
+    path {
+      fill: currentColor;
     }
   }
 }

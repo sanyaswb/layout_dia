@@ -9,6 +9,28 @@
 
     & > li {
       height: 100%;
+
+      @include on-desktop-s {
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          display: block;
+          height: 2px;
+          width: 100%;
+          transform: scaleX(0);
+          background-color: var(--bg-button-page);
+          border-radius: 4px;
+          transform-origin: left;
+          transition: transform $my-duration;
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+        }
+      }
     }
   }
 
@@ -27,6 +49,28 @@
 
     &__list {
       gap: 48px;
+
+      // & > li {
+      //   position: relative;
+
+      //   &::after {
+      //     content: '';
+      //     position: absolute;
+      //     bottom: 0;
+      //     display: block;
+      //     height: 2px;
+      //     width: 100%;
+      //     transform: scaleX(0);
+      //     background-color: var(--bg-button-page);
+      //     border-radius: 4px;
+      //     transform-origin: left;
+      //     transition: transform $my-duration;
+      //   }
+
+      //   &:hover::after {
+      //     transform: scaleX(1);
+      //   }
+      // }
     }
   }
 
