@@ -1,5 +1,8 @@
 'use strict';
 
+const preloadImage = new Image();
+preloadImage.src = './images/slider/slide-img-1--theme.jpg';
+
 const switcher = document.getElementById('switcher');
 
 switcher.addEventListener('click', () => {
@@ -12,6 +15,8 @@ switcher.addEventListener('click', () => {
     html.dataset.theme = 'light';
   }
 });
+
+//-----------------
 
 const section = document.querySelector('.division');
 const background = section.querySelector('.division__background');
@@ -51,11 +56,13 @@ function animate() {
 
 animate();
 
+//-----------------------
+
 const revealItems = document.querySelectorAll(
-  '.description__title, .description__text',
+  '.description__title, .description__text, .division__title, .division__text',
 );
 
-const observer = new IntersectionObserver(
+const observerSection = new IntersectionObserver(
   (entries, obs) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -71,4 +78,28 @@ const observer = new IntersectionObserver(
   },
 );
 
-revealItems.forEach((el) => observer.observe(el));
+revealItems.forEach((el) => observerSection.observe(el));
+
+//------------------
+
+document.addEventListener('DOMContentLoaded', () => {
+  const heroSwiper = new Swiper('.hero__slider', {
+    loop: true,
+    speed: 800,
+    grabCursor: true,
+    allowTouchMove: true,
+
+    navigation: {
+      nextEl: '.js-hero-next',
+      prevEl: '.js-hero-prev',
+    },
+
+    autoplay: {
+      delay: 5000,
+    },
+  });
+
+  heroSwiper.on('click', () => {
+    heroSwiper.slideNext();
+  });
+});

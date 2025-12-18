@@ -23,6 +23,13 @@
     will-change: opacity, transform;
   }
 
+  &__title.is-visible,
+  &__text.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: var(--reveal-delay);
+  }
+
   &__title {
     --reveal-delay: 0s;
 
@@ -51,12 +58,5 @@
     }
 
     @extend %font-description;
-  }
-
-  &__title.is-visible,
-  &__text.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: var(--reveal-delay);
   }
 }

@@ -70,4 +70,8 @@ html[data-theme='light'] {
   --st-miterlimit-2: 12;
   --st-miterlimit-3: 17;
   --st-miterlimit-4: 25;
+
+  .hero__slide-img--theme {
+    opacity: 1;
+  }
 }

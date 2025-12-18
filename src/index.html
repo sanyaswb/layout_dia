@@ -14,6 +14,10 @@
       rel="stylesheet"
       href="./styles/style.scss"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <script
       type="module"
       src="scripts/index.js"
@@ -143,18 +147,51 @@
         </div>
       </div>
       <section class="header__hero hero">
+        <div class="swiper hero__slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide hero__slide">
+              <img
+                src="./images/slider/slide-img-1.jpg"
+                alt="slide-1"
+                class="hero__slide-img hero__slide-img--base"
+              />
+
+              <img
+                src="./images/slider/slide-img-1--theme.jpg"
+                alt="slide-1 theme"
+                class="hero__slide-img hero__slide-img--theme"
+              />
+            </div>
+            <div class="swiper-slide hero__slide">
+              <img
+                src="./images/slider/slide-img-2.jpg"
+                alt="slide-3"
+                class="hero__slide-img"
+              />
+            </div>
+            <div class="swiper-slide hero__slide">
+              <img
+                src="./images/slider/slide-img-3.jpg"
+                alt="slide-4"
+                class="hero__slide-img"
+              />
+            </div>
+          </div>
+        </div>
+
         <div class="hero__container">
           <div class="hero__content">
             <div class="hero__slider-buttons">
               <a
                 href="#"
-                class="slider-button"
+                class="slider-button js-hero-prev"
               ></a>
               <a
                 href="#"
-                class="hero__slider-button--right slider-button"
+                class="slider-button hero__slider-button--right js-hero-next"
               ></a>
             </div>
+
             <div>
               <h5 class="hero__title">intro</h5>
               <p class="hero__text">
@@ -569,8 +606,8 @@
         </div>
         <div class="division__wrapper wrapper grid">
           <div class="division__content">
-            <h2>Vision, Passion, Results</h2>
-            <p class="division__description">
+            <h2 class="division__title">Vision, Passion, Results</h2>
+            <p class="division__text">
               We are sure that first-rate job is possible only if all three
               components are united.
             </p>
@@ -759,5 +796,6 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </body>
 </html>
