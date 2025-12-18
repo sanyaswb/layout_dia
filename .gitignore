@@ -15,6 +15,7 @@ convert-fonts.js
 import-fonts.js
 scss-generate.js
 scss-generate.backup.scss
+convert-images.js
 .cache
 .parcel-cache
 

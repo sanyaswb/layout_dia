@@ -83,21 +83,21 @@
     &-image {
       &--1 {
         @include background-config(
-          url(../images/testimonials/testimonial-ava-1.jpg),
+          url(../images/testimonials/testimonial-ava-1.webp),
           $position: top
         );
       }
 
       &--2 {
         @include background-config(
-          url(../images/testimonials/testimonial-ava-2.jpg),
+          url(../images/testimonials/testimonial-ava-2.webp),
           $position: top
         );
       }
 
       &--3 {
         @include background-config(
-          url(../images/testimonials/testimonial-ava-3.jpg),
+          url(../images/testimonials/testimonial-ava-3.webp),
           $position: top
         );
       }

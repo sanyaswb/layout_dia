@@ -1,7 +1,7 @@
 'use strict';
 
 const preloadImage = new Image();
-preloadImage.src = './images/slider/slide-img-1--theme.jpg';
+preloadImage.src = './images/slider/slide-img-1--theme.webp';
 
 const switcher = document.getElementById('switcher');
 
@@ -102,4 +102,36 @@ document.addEventListener('DOMContentLoaded', () => {
   heroSwiper.on('click', () => {
     heroSwiper.slideNext();
   });
+});
+
+//--------------------------
+
+const header = document.getElementById('header');
+const scrollTopBtn = document.querySelector('.scroll-top');
+
+let lastScrollY = window.scrollY;
+let isHidden = false;
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.scrollY;
+  const headerBottom = header.offsetHeight;
+
+  if (currentScroll <= headerBottom) {
+    scrollTopBtn.classList.remove('visible');
+
+    isHidden = false;
+    return;
+  }
+
+  if (currentScroll > lastScrollY && !isHidden) {
+    scrollTopBtn.classList.add('visible');
+
+    isHidden = true;
+  }
+
+  lastScrollY = currentScroll;
+});
+
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0 });
 });
