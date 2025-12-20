@@ -36,92 +36,91 @@
   &__card {
     grid-column: 1 / -1;
 
-    @include on-desktop-s {
-      &--1 {
-        &:hover {
-          .card-testimonials__back-image--1 {
-            &::before {
-              transform: translateY(-20%) translateX(-90%) rotate(30deg);
-            }
+    &--1 {
+      @include hover(
+        transform,
+        translateY(-20%) translateX(-90%) rotate(30deg),
+        ".card-testimonials__back-image--1::before"
+      );
 
-            &::after {
-              transform: translateY(20%) translateX(90%) rotate(30deg);
-            }
-          }
-        }
-      }
+      @include hover(
+        transform,
+        translateY(20%) translateX(90%) rotate(30deg),
+        ".card-testimonials__back-image--1::after"
+      );
+    }
 
-      &--2 {
-        &:hover {
-          .card-testimonials__back-image--2 {
-            &::before {
-              transform: translateY(-20%) translateX(-90%) rotate(30deg);
-            }
+    &--2 {
+      @include hover(
+        transform,
+        translateY(-20%) translateX(-90%) rotate(30deg),
+        ".card-testimonials__back-image--2::before"
+      );
 
-            &::after {
-              transform: translateY(20%) translateX(90%) rotate(30deg);
-            }
-          }
-        }
-      }
+      @include hover(
+        transform,
+        translateY(20%) translateX(90%) rotate(30deg),
+        ".card-testimonials__back-image--2::after"
+      );
+    }
 
-      &--3 {
-        &:hover {
-          .card-testimonials__back-image--3 {
-            &::before {
-              transform: translateY(-20%) translateX(-90%) rotate(30deg);
-            }
+    &--3 {
+      @include hover(
+        transform,
+        translateY(-20%) translateX(-90%) rotate(30deg),
+        ".card-testimonials__back-image--3::before"
+      );
 
-            &::after {
-              transform: translateY(20%) translateX(90%) rotate(30deg);
-            }
-          }
-        }
-      }
+      @include hover(
+        transform,
+        translateY(20%) translateX(90%) rotate(30deg),
+        ".card-testimonials__back-image--3::after"
+      );
     }
 
     &-image {
       &--1 {
-        // background-image: url(../images/testimonials/testimonial-ava-1.webp);
-
-        @include background-config(
-          $position: top
-        );
+        @include background-config($position: top);
       }
 
       &--2 {
-        // background-image: url(../images/testimonials/testimonial-ava-2.webp);
-        @include background-config(
-          $position: top
-        );
+        @include background-config($position: top);
       }
 
       &--3 {
-        // background-image: url(../images/testimonials/testimonial-ava-3.webp);
-
-        @include background-config(
-          $position: top
-        );
+        @include background-config($position: top);
       }
+    }
+
+    &--1 {
+      @include hover(
+        (
+          box-shadow: var(--card-shadow-1),
+          transform: translateY(-10px),
+        )
+      );
+    }
+
+    &--2 {
+      @include hover(
+        (
+          box-shadow: var(--card-shadow-2),
+          transform: translateY(-10px),
+        )
+      );
+    }
+
+    &--3 {
+      @include hover(
+        (
+          box-shadow: var(--card-shadow-3),
+          transform: translateY(-10px),
+        )
+      );
     }
 
     @include on-desktop-s {
       grid-column: span 4;
-
-      &--1 {
-        @include hover(box-shadow, var(--card-shadow-1));
-        @include hover(transform, translateY(-10px));
-      }
-
-      &--2 {
-        @include hover(box-shadow, var(--card-shadow-2));
-        @include hover(transform, translateY(-10px));
-      }
-
-      &--3 {
-        @include hover(box-shadow, var(--card-shadow-3));
-        @include hover(transform, translateY(-10px));
-      }
     }
   }
 }

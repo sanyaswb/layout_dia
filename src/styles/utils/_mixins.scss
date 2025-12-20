@@ -1,7 +1,77 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} $my-duration;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin hover($property, $value: null, $child: null) {
+  $separator: " ";
+  @if $child and str-index($child, ":") == 1 {
+    $separator: "";
+  }
+
+  @if $child {
+    &#{$separator}#{$child} {
+      @if type-of($property) == "map" {
+        $transitions: ();
+        @each $prop, $val in $property {
+          $transitions: append($transitions, #{$prop} $my-duration, comma);
+        }
+        transition: $transitions;
+      } @else {
+        transition: #{$property} $my-duration;
+      }
+    }
+  } @else {
+    @if type-of($property) == "map" {
+      $transitions: ();
+      @each $prop, $val in $property {
+        $transitions: append($transitions, #{$prop} $my-duration, comma);
+      }
+      transition: $transitions;
+    } @else {
+      transition: #{$property} $my-duration;
+    }
+  }
+
+  $sel-hover: "&:hover";
+  $sel-active: "&:active";
+
+  @if $child {
+    $sel-hover: "&:hover#{$separator}#{$child}";
+    $sel-active: "&:active#{$separator}#{$child}";
+  }
+
+  @media (hover: hover) {
+    #{$sel-hover} {
+      @if type-of($property) == "map" {
+        @each $prop, $val in $property {
+          #{$prop}: $val;
+        }
+      } @else {
+        #{$property}: $value;
+      }
+    }
+  }
+
+  #{$sel-active} {
+    @if type-of($property) == "map" {
+      @each $prop, $val in $property {
+        #{$prop}: $val;
+      }
+    } @else {
+      #{$property}: $value;
+    }
+  }
+}
+
+@mixin svg-icon-theme($name, $color, $hover, $duration: $my-duration) {
+  &.svg-icon-#{$name} {
+    color: $color;
+    transition: color $duration ease;
+
+    &:hover,
+    &:focus {
+      color: $hover;
+    }
+
+    path {
+      fill: currentColor;
+    }
   }
 }
 
@@ -29,22 +99,6 @@
   }
 }
 
-@mixin svg-icon-theme($name, $color, $hover, $duration: $my-duration) {
-  &.svg-icon-#{$name} {
-    color: $color;
-    transition: color $duration ease;
-
-    &:hover,
-    &:focus {
-      color: $hover;
-    }
-
-    path {
-      fill: currentColor;
-    }
-  }
-}
-
 @mixin page-grid {
   --grid-columns: 2;
 
@@ -66,15 +120,6 @@
 
   @include on-design {
     column-gap: $max-column-gap;
-  }
-}
-
-@mixin main-block-padding {
-  padding-top: 120px;
-  padding-bottom: 80px;
-
-  @include on-tablet {
-    padding-top: 148px;
   }
 }
 

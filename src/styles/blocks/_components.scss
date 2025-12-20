@@ -16,7 +16,7 @@
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     width: 18px;
     height: 2px;
     background-color: $white;
@@ -35,13 +35,9 @@
     width: 264px;
   }
 
-  @include on-desktop-s {
-    @include hover(background-color, var(--bg-button-form));
-  }
+  @include hover(background-color, var(--bg-button-form));
 
-  transition:
-    background-color $my-duration,
-    border-radius $my-duration;
+  transition: background-color $my-duration, border-radius $my-duration;
 }
 
 .slider-button {
@@ -53,13 +49,11 @@
   background-color: $white;
   border-radius: $circle;
 
-  @include on-desktop-s {
-    @include hover(background-color, $blue-hover);
-  }
+  @include hover(background-color, $blue-hover);
 
   &::after,
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     height: 2px;
@@ -67,13 +61,8 @@
     background-color: $grey;
     transition: background-color, $my-duration;
   }
-
-  @include on-desktop-s {
-    &:hover::after,
-    &:hover::before {
-      background-color: var(--bg-button-page);
-    }
-  }
+  @include hover(background-color, var(--bg-button-page), "::after");
+  @include hover(background-color, var(--bg-button-page), "::before");
 
   &::after {
     transform-origin: left bottom;
@@ -105,19 +94,17 @@
     padding: 32px;
     box-shadow: 0 9px 18px 0 rgba(37, 41, 49, 0.03);
 
-    @include on-desktop-s {
-      &--1 {
-        @include hover(box-shadow, var(--card-shadow-1));
-      }
-      &--2 {
-        @include hover(box-shadow, var(--card-shadow-2));
-      }
-      &--3 {
-        @include hover(box-shadow, var(--card-shadow-3));
-      }
-      &--4 {
-        @include hover(box-shadow, var(--card-shadow-4));
-      }
+    &--1 {
+      @include hover(box-shadow, var(--card-shadow-1));
+    }
+    &--2 {
+      @include hover(box-shadow, var(--card-shadow-2));
+    }
+    &--3 {
+      @include hover(box-shadow, var(--card-shadow-3));
+    }
+    &--4 {
+      @include hover(box-shadow, var(--card-shadow-4));
     }
 
     &__number {
@@ -150,31 +137,23 @@
 
       @extend %font-button;
 
-      @include on-desktop-s {
-        &:hover {
-          .card-services__button {
-            transform: rotate(-90deg);
-          }
-        }
+      @include hover(transform, rotate(-90deg), ".card-services__button");
 
-        &--1:hover {
-          color: var(--color-card-1);
-          .card {
-            box-shadow: var(--card-shadow-1);
-          }
-        }
+      &--1 {
+        @include hover(color, var(--color-card-1));
+        @include hover(box-shadow, var(--card-shadow-1), ".card");
+      }
 
-        &--2:hover {
-          color: var(--color-card-2);
-        }
+      &--2 {
+        @include hover(color, var(--color-card-2));
+      }
 
-        &--3:hover {
-          color: var(--color-card-3);
-        }
+      &--3 {
+        @include hover(color, var(--color-card-3));
+      }
 
-        &--4:hover {
-          color: var(--color-card-4);
-        }
+      &--4 {
+        @include hover(color, var(--color-card-4));
       }
     }
 
@@ -187,9 +166,7 @@
       height: 40px;
       aspect-ratio: 1 / 1;
       margin-right: 16px;
-      transition:
-        transform $my-duration,
-        background-color $my-duration;
+      transition: transform $my-duration, background-color $my-duration;
 
       &-image {
         height: 16px;
@@ -284,15 +261,13 @@
 
       &::before,
       &::after {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         height: 108.98px;
         width: 43.9px;
         border-radius: 12px;
-        transition:
-          transform $my-duration,
-          background-color $my-duration;
+        transition: transform $my-duration, background-color $my-duration;
 
         @include on-tablet {
           height: 139px;
@@ -497,9 +472,7 @@
   fill: var(--bg-switcher);
 
   transform: rotate(calc(var(--base-rotate) + var(--hover-rotate)));
-  transition:
-    transform $my-duration,
-    fill $my-duration;
+  transition: transform $my-duration, fill $my-duration;
 
   &-link {
     display: flex;
@@ -553,9 +526,7 @@ html[data-theme] .switcher {
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
-  transition:
-    opacity $my-duration,
-    transform $my-duration,
+  transition: opacity $my-duration, transform $my-duration,
     visibility $my-duration;
 
   @include on-tablet {
@@ -567,7 +538,7 @@ html[data-theme] .switcher {
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 2px;
     height: 10px;

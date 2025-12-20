@@ -23,7 +23,7 @@ h5 {
 }
 
 button {
-  @extend %button;
+  @extend %font-button;
 }
 
 input {
@@ -34,24 +34,12 @@ input {
   &:focus {
     opacity: 1;
   }
+
+  &::placeholder {
+    @extend %input-placeholder;
+  }
 }
 
 nav {
   @extend %font-nav;
-}
-
-input::placeholder {
-  @extend %input-placeholder;
-}
-
-.section-title {
-  @extend %font-section-title;
-}
-
-.button {
-  @extend %font-button;
-}
-
-.text-uppercase {
-  text-transform: uppercase;
 }
